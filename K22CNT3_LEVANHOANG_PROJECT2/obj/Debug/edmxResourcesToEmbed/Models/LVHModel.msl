@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="K22CNT3_LEVANHOANG_PROJECT2ModelStoreContainer" CdmEntityContainer="K22CNT3_LEVANHOANG_PROJECT2Entities">
+    <EntitySetMapping Name="ChiTietDonHangPj2">
+      <EntityTypeMapping TypeName="K22CNT3_LEVANHOANG_PROJECT2Model.ChiTietDonHangPj2">
+        <MappingFragment StoreEntitySet="ChiTietDonHangPj2">
+          <ScalarProperty Name="MaChiTiet" ColumnName="MaChiTiet" />
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="NgayDatHang" ColumnName="NgayDatHang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DonHangPj2">
+      <EntityTypeMapping TypeName="K22CNT3_LEVANHOANG_PROJECT2Model.DonHangPj2">
+        <MappingFragment StoreEntitySet="DonHangPj2">
+          <ScalarProperty Name="MaDonHang" ColumnName="MaDonHang" />
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="NgayDatHang" ColumnName="NgayDatHang" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GioHangPj2">
+      <EntityTypeMapping TypeName="K22CNT3_LEVANHOANG_PROJECT2Model.GioHangPj2">
+        <MappingFragment StoreEntitySet="GioHangPj2">
+          <ScalarProperty Name="MaGioHang" ColumnName="MaGioHang" />
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="NgayThem" ColumnName="NgayThem" />
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhachHangPj2">
+      <EntityTypeMapping TypeName="K22CNT3_LEVANHOANG_PROJECT2Model.KhachHangPj2">
+        <MappingFragment StoreEntitySet="KhachHangPj2">
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuanTriPj2">
+      <EntityTypeMapping TypeName="K22CNT3_LEVANHOANG_PROJECT2Model.QuanTriPj2">
+        <MappingFragment StoreEntitySet="QuanTriPj2">
+          <ScalarProperty Name="Taikhoan" ColumnName="Taikhoan" />
+          <ScalarProperty Name="Matkhau" ColumnName="Matkhau" />
+          <ScalarProperty Name="Trangthai" ColumnName="Trangthai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SanPhamPj2">
+      <EntityTypeMapping TypeName="K22CNT3_LEVANHOANG_PROJECT2Model.SanPhamPj2">
+        <MappingFragment StoreEntitySet="SanPhamPj2">
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="NgayNhap" ColumnName="NgayNhap" />
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

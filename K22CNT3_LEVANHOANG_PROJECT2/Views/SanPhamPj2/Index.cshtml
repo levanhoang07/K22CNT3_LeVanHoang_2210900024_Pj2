@@ -1,0 +1,69 @@
+﻿@model IEnumerable<K22CNT3_LEVANHOANG_PROJECT2.Models.SanPhamPj2>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lê Văn Hoàng - Sản phẩm</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayNhap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrangThai)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaSP)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TenSP)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MoTa)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Gia)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SoLuong)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NgayNhap)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TrangThai)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.MaSP }, new { @class = "btn btn-success" }) |
+        @Html.ActionLink("Details", "Details", new { id = item.MaSP }, new { @class = "btn btn-info" }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.MaSP }, new { @class = "btn btn-danger" })
+    </td>
+</tr>
+}
+
+</table>

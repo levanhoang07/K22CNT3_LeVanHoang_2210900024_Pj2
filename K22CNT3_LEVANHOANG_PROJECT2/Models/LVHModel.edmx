@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="K22CNT3_LEVANHOANG_PROJECT2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ChiTietDonHangPj2">
+          <Key>
+            <PropertyRef Name="MaChiTiet" />
+          </Key>
+          <Property Name="MaChiTiet" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaKH" Type="int" Nullable="false" />
+          <Property Name="MaSP" Type="int" Nullable="false" />
+          <Property Name="SoLuong" Type="int" Nullable="false" />
+          <Property Name="DonGia" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="NgayDatHang" Type="datetime" />
+        </EntityType>
+        <EntityType Name="DonHangPj2">
+          <Key>
+            <PropertyRef Name="MaDonHang" />
+          </Key>
+          <Property Name="MaDonHang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaKH" Type="int" Nullable="false" />
+          <Property Name="NgayDatHang" Type="datetime" />
+          <Property Name="TongTien" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TrangThai" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="GioHangPj2">
+          <Key>
+            <PropertyRef Name="MaGioHang" />
+          </Key>
+          <Property Name="MaGioHang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaKH" Type="int" Nullable="false" />
+          <Property Name="MaSP" Type="int" Nullable="false" />
+          <Property Name="SoLuong" Type="int" Nullable="false" />
+          <Property Name="NgayThem" Type="datetime" />
+          <Property Name="TrangThai" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="KhachHangPj2">
+          <Key>
+            <PropertyRef Name="MaKH" />
+          </Key>
+          <Property Name="MaKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HoTen" Type="varchar" MaxLength="100" />
+          <Property Name="TaiKhoan" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MatKhau" Type="varchar" MaxLength="32" />
+          <Property Name="DiaChi" Type="varchar" MaxLength="200" />
+          <Property Name="DienThoai" Type="varchar" MaxLength="30" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NgaySinh" Type="datetime" />
+          <Property Name="NgayCapNhat" Type="datetime" />
+          <Property Name="GioiTinh" Type="tinyint" />
+          <Property Name="TrangThai" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="QuanTriPj2">
+          <Key>
+            <PropertyRef Name="Taikhoan" />
+          </Key>
+          <Property Name="Taikhoan" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Matkhau" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="Trangthai" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="SanPhamPj2">
+          <Key>
+            <PropertyRef Name="MaSP" />
+          </Key>
+          <Property Name="MaSP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenSP" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="MoTa" Type="varchar" MaxLength="500" />
+          <Property Name="Gia" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SoLuong" Type="int" />
+          <Property Name="NgayNhap" Type="datetime" />
+          <Property Name="TrangThai" Type="tinyint" />
+        </EntityType>
+        <Association Name="FK__ChiTietDon__MaKH__37A5467C">
+          <End Role="KhachHangPj2" Type="Self.KhachHangPj2" Multiplicity="1" />
+          <End Role="ChiTietDonHangPj2" Type="Self.ChiTietDonHangPj2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhachHangPj2">
+              <PropertyRef Name="MaKH" />
+            </Principal>
+            <Dependent Role="ChiTietDonHangPj2">
+              <PropertyRef Name="MaKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiTietDon__MaSP__38996AB5">
+          <End Role="SanPhamPj2" Type="Self.SanPhamPj2" Multiplicity="1" />
+          <End Role="ChiTietDonHangPj2" Type="Self.ChiTietDonHangPj2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SanPhamPj2">
+              <PropertyRef Name="MaSP" />
+            </Principal>
+            <Dependent Role="ChiTietDonHangPj2">
+              <PropertyRef Name="MaSP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DonHangPj2__MaKH__440B1D61">
+          <End Role="KhachHangPj2" Type="Self.KhachHangPj2" Multiplicity="1" />
+          <End Role="DonHangPj2" Type="Self.DonHangPj2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhachHangPj2">
+              <PropertyRef Name="MaKH" />
+            </Principal>
+            <Dependent Role="DonHangPj2">
+              <PropertyRef Name="MaKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GioHangPj2__MaKH__3E52440B">
+          <End Role="KhachHangPj2" Type="Self.KhachHangPj2" Multiplicity="1" />
+          <End Role="GioHangPj2" Type="Self.GioHangPj2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhachHangPj2">
+              <PropertyRef Name="MaKH" />
+            </Principal>
+            <Dependent Role="GioHangPj2">
+              <PropertyRef Name="MaKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GioHangPj2__MaSP__3F466844">
+          <End Role="SanPhamPj2" Type="Self.SanPhamPj2" Multiplicity="1" />
+          <End Role="GioHangPj2" Type="Self.GioHangPj2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SanPhamPj2">
+              <PropertyRef Name="MaSP" />
+            </Principal>
+            <Dependent Role="GioHangPj2">
+              <PropertyRef Name="MaSP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="K22CNT3_LEVANHOANG_PROJECT2ModelStoreContainer">
+          <EntitySet Name="ChiTietDonHangPj2" EntityType="Self.ChiTietDonHangPj2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DonHangPj2" EntityType="Self.DonHangPj2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GioHangPj2" EntityType="Self.GioHangPj2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KhachHangPj2" EntityType="Self.KhachHangPj2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuanTriPj2" EntityType="Self.QuanTriPj2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SanPhamPj2" EntityType="Self.SanPhamPj2" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__ChiTietDon__MaKH__37A5467C" Association="Self.FK__ChiTietDon__MaKH__37A5467C">
+            <End Role="KhachHangPj2" EntitySet="KhachHangPj2" />
+            <End Role="ChiTietDonHangPj2" EntitySet="ChiTietDonHangPj2" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiTietDon__MaSP__38996AB5" Association="Self.FK__ChiTietDon__MaSP__38996AB5">
+            <End Role="SanPhamPj2" EntitySet="SanPhamPj2" />
+            <End Role="ChiTietDonHangPj2" EntitySet="ChiTietDonHangPj2" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DonHangPj2__MaKH__440B1D61" Association="Self.FK__DonHangPj2__MaKH__440B1D61">
+            <End Role="KhachHangPj2" EntitySet="KhachHangPj2" />
+            <End Role="DonHangPj2" EntitySet="DonHangPj2" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GioHangPj2__MaKH__3E52440B" Association="Self.FK__GioHangPj2__MaKH__3E52440B">
+            <End Role="KhachHangPj2" EntitySet="KhachHangPj2" />
+            <End Role="GioHangPj2" EntitySet="GioHangPj2" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GioHangPj2__MaSP__3F466844" Association="Self.FK__GioHangPj2__MaSP__3F466844">
+            <End Role="SanPhamPj2" EntitySet="SanPhamPj2" />
+            <End Role="GioHangPj2" EntitySet="GioHangPj2" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="K22CNT3_LEVANHOANG_PROJECT2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ChiTietDonHangPj2">
+          <Key>
+            <PropertyRef Name="MaChiTiet" />
+          </Key>
+          <Property Name="MaChiTiet" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaKH" Type="Int32" Nullable="false" />
+          <Property Name="MaSP" Type="Int32" Nullable="false" />
+          <Property Name="SoLuong" Type="Int32" Nullable="false" />
+          <Property Name="DonGia" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="NgayDatHang" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="KhachHangPj2" Relationship="Self.FK__ChiTietDon__MaKH__37A5467C" FromRole="ChiTietDonHangPj2" ToRole="KhachHangPj2" />
+          <NavigationProperty Name="SanPhamPj2" Relationship="Self.FK__ChiTietDon__MaSP__38996AB5" FromRole="ChiTietDonHangPj2" ToRole="SanPhamPj2" />
+        </EntityType>
+        <EntityType Name="DonHangPj2">
+          <Key>
+            <PropertyRef Name="MaDonHang" />
+          </Key>
+          <Property Name="MaDonHang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaKH" Type="Int32" Nullable="false" />
+          <Property Name="NgayDatHang" Type="DateTime" Precision="3" />
+          <Property Name="TongTien" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TrangThai" Type="Byte" />
+          <NavigationProperty Name="KhachHangPj2" Relationship="Self.FK__DonHangPj2__MaKH__440B1D61" FromRole="DonHangPj2" ToRole="KhachHangPj2" />
+        </EntityType>
+        <EntityType Name="GioHangPj2">
+          <Key>
+            <PropertyRef Name="MaGioHang" />
+          </Key>
+          <Property Name="MaGioHang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaKH" Type="Int32" Nullable="false" />
+          <Property Name="MaSP" Type="Int32" Nullable="false" />
+          <Property Name="SoLuong" Type="Int32" Nullable="false" />
+          <Property Name="NgayThem" Type="DateTime" Precision="3" />
+          <Property Name="TrangThai" Type="Byte" />
+          <NavigationProperty Name="KhachHangPj2" Relationship="Self.FK__GioHangPj2__MaKH__3E52440B" FromRole="GioHangPj2" ToRole="KhachHangPj2" />
+          <NavigationProperty Name="SanPhamPj2" Relationship="Self.FK__GioHangPj2__MaSP__3F466844" FromRole="GioHangPj2" ToRole="SanPhamPj2" />
+        </EntityType>
+        <EntityType Name="KhachHangPj2">
+          <Key>
+            <PropertyRef Name="MaKH" />
+          </Key>
+          <Property Name="MaKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HoTen" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TaiKhoan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MatKhau" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="DiaChi" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DienThoai" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="3" />
+          <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
+          <Property Name="GioiTinh" Type="Byte" />
+          <Property Name="TrangThai" Type="Byte" />
+          <NavigationProperty Name="ChiTietDonHangPj2" Relationship="Self.FK__ChiTietDon__MaKH__37A5467C" FromRole="KhachHangPj2" ToRole="ChiTietDonHangPj2" />
+          <NavigationProperty Name="DonHangPj2" Relationship="Self.FK__DonHangPj2__MaKH__440B1D61" FromRole="KhachHangPj2" ToRole="DonHangPj2" />
+          <NavigationProperty Name="GioHangPj2" Relationship="Self.FK__GioHangPj2__MaKH__3E52440B" FromRole="KhachHangPj2" ToRole="GioHangPj2" />
+        </EntityType>
+        <EntityType Name="QuanTriPj2">
+          <Key>
+            <PropertyRef Name="Taikhoan" />
+          </Key>
+          <Property Name="Taikhoan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Matkhau" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Trangthai" Type="Byte" />
+        </EntityType>
+        <EntityType Name="SanPhamPj2">
+          <Key>
+            <PropertyRef Name="MaSP" />
+          </Key>
+          <Property Name="MaSP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenSP" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MoTa" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Gia" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SoLuong" Type="Int32" />
+          <Property Name="NgayNhap" Type="DateTime" Precision="3" />
+          <Property Name="TrangThai" Type="Byte" />
+          <NavigationProperty Name="ChiTietDonHangPj2" Relationship="Self.FK__ChiTietDon__MaSP__38996AB5" FromRole="SanPhamPj2" ToRole="ChiTietDonHangPj2" />
+          <NavigationProperty Name="GioHangPj2" Relationship="Self.FK__GioHangPj2__MaSP__3F466844" FromRole="SanPhamPj2" ToRole="GioHangPj2" />
+        </EntityType>
+        <Association Name="FK__ChiTietDon__MaKH__37A5467C">
+          <End Role="KhachHangPj2" Type="Self.KhachHangPj2" Multiplicity="1" />
+          <End Role="ChiTietDonHangPj2" Type="Self.ChiTietDonHangPj2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhachHangPj2">
+              <PropertyRef Name="MaKH" />
+            </Principal>
+            <Dependent Role="ChiTietDonHangPj2">
+              <PropertyRef Name="MaKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiTietDon__MaSP__38996AB5">
+          <End Role="SanPhamPj2" Type="Self.SanPhamPj2" Multiplicity="1" />
+          <End Role="ChiTietDonHangPj2" Type="Self.ChiTietDonHangPj2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SanPhamPj2">
+              <PropertyRef Name="MaSP" />
+            </Principal>
+            <Dependent Role="ChiTietDonHangPj2">
+              <PropertyRef Name="MaSP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DonHangPj2__MaKH__440B1D61">
+          <End Role="KhachHangPj2" Type="Self.KhachHangPj2" Multiplicity="1" />
+          <End Role="DonHangPj2" Type="Self.DonHangPj2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhachHangPj2">
+              <PropertyRef Name="MaKH" />
+            </Principal>
+            <Dependent Role="DonHangPj2">
+              <PropertyRef Name="MaKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GioHangPj2__MaKH__3E52440B">
+          <End Role="KhachHangPj2" Type="Self.KhachHangPj2" Multiplicity="1" />
+          <End Role="GioHangPj2" Type="Self.GioHangPj2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhachHangPj2">
+              <PropertyRef Name="MaKH" />
+            </Principal>
+            <Dependent Role="GioHangPj2">
+              <PropertyRef Name="MaKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GioHangPj2__MaSP__3F466844">
+          <End Role="SanPhamPj2" Type="Self.SanPhamPj2" Multiplicity="1" />
+          <End Role="GioHangPj2" Type="Self.GioHangPj2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SanPhamPj2">
+              <PropertyRef Name="MaSP" />
+            </Principal>
+            <Dependent Role="GioHangPj2">
+              <PropertyRef Name="MaSP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="K22CNT3_LEVANHOANG_PROJECT2Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ChiTietDonHangPj2" EntityType="Self.ChiTietDonHangPj2" />
+          <EntitySet Name="DonHangPj2" EntityType="Self.DonHangPj2" />
+          <EntitySet Name="GioHangPj2" EntityType="Self.GioHangPj2" />
+          <EntitySet Name="KhachHangPj2" EntityType="Self.KhachHangPj2" />
+          <EntitySet Name="QuanTriPj2" EntityType="Self.QuanTriPj2" />
+          <EntitySet Name="SanPhamPj2" EntityType="Self.SanPhamPj2" />
+          <AssociationSet Name="FK__ChiTietDon__MaKH__37A5467C" Association="Self.FK__ChiTietDon__MaKH__37A5467C">
+            <End Role="KhachHangPj2" EntitySet="KhachHangPj2" />
+            <End Role="ChiTietDonHangPj2" EntitySet="ChiTietDonHangPj2" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiTietDon__MaSP__38996AB5" Association="Self.FK__ChiTietDon__MaSP__38996AB5">
+            <End Role="SanPhamPj2" EntitySet="SanPhamPj2" />
+            <End Role="ChiTietDonHangPj2" EntitySet="ChiTietDonHangPj2" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DonHangPj2__MaKH__440B1D61" Association="Self.FK__DonHangPj2__MaKH__440B1D61">
+            <End Role="KhachHangPj2" EntitySet="KhachHangPj2" />
+            <End Role="DonHangPj2" EntitySet="DonHangPj2" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GioHangPj2__MaKH__3E52440B" Association="Self.FK__GioHangPj2__MaKH__3E52440B">
+            <End Role="KhachHangPj2" EntitySet="KhachHangPj2" />
+            <End Role="GioHangPj2" EntitySet="GioHangPj2" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GioHangPj2__MaSP__3F466844" Association="Self.FK__GioHangPj2__MaSP__3F466844">
+            <End Role="SanPhamPj2" EntitySet="SanPhamPj2" />
+            <End Role="GioHangPj2" EntitySet="GioHangPj2" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="K22CNT3_LEVANHOANG_PROJECT2ModelStoreContainer" CdmEntityContainer="K22CNT3_LEVANHOANG_PROJECT2Entities">
+          <EntitySetMapping Name="ChiTietDonHangPj2">
+            <EntityTypeMapping TypeName="K22CNT3_LEVANHOANG_PROJECT2Model.ChiTietDonHangPj2">
+              <MappingFragment StoreEntitySet="ChiTietDonHangPj2">
+                <ScalarProperty Name="MaChiTiet" ColumnName="MaChiTiet" />
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+                <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+                <ScalarProperty Name="NgayDatHang" ColumnName="NgayDatHang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DonHangPj2">
+            <EntityTypeMapping TypeName="K22CNT3_LEVANHOANG_PROJECT2Model.DonHangPj2">
+              <MappingFragment StoreEntitySet="DonHangPj2">
+                <ScalarProperty Name="MaDonHang" ColumnName="MaDonHang" />
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+                <ScalarProperty Name="NgayDatHang" ColumnName="NgayDatHang" />
+                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GioHangPj2">
+            <EntityTypeMapping TypeName="K22CNT3_LEVANHOANG_PROJECT2Model.GioHangPj2">
+              <MappingFragment StoreEntitySet="GioHangPj2">
+                <ScalarProperty Name="MaGioHang" ColumnName="MaGioHang" />
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+                <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="NgayThem" ColumnName="NgayThem" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KhachHangPj2">
+            <EntityTypeMapping TypeName="K22CNT3_LEVANHOANG_PROJECT2Model.KhachHangPj2">
+              <MappingFragment StoreEntitySet="KhachHangPj2">
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
+                <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuanTriPj2">
+            <EntityTypeMapping TypeName="K22CNT3_LEVANHOANG_PROJECT2Model.QuanTriPj2">
+              <MappingFragment StoreEntitySet="QuanTriPj2">
+                <ScalarProperty Name="Taikhoan" ColumnName="Taikhoan" />
+                <ScalarProperty Name="Matkhau" ColumnName="Matkhau" />
+                <ScalarProperty Name="Trangthai" ColumnName="Trangthai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SanPhamPj2">
+            <EntityTypeMapping TypeName="K22CNT3_LEVANHOANG_PROJECT2Model.SanPhamPj2">
+              <MappingFragment StoreEntitySet="SanPhamPj2">
+                <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+                <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="Gia" ColumnName="Gia" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="NgayNhap" ColumnName="NgayNhap" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,57 @@
+﻿@model K22CNT3_LEVANHOANG_PROJECT2.Models.DonHangPj2
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DonHangPj2</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaDonHang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaDonHang)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayDatHang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayDatHang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TongTien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TongTien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrangThai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrangThai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KhachHangPj2.HoTen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KhachHangPj2.HoTen)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa ", "Edit", new { id = Model.MaDonHang }) |
+    @Html.ActionLink("Quay trở lại", "Index")
+</p>

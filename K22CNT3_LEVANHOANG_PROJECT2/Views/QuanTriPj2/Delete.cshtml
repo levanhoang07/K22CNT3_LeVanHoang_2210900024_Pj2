@@ -1,0 +1,47 @@
+﻿@model K22CNT3_LEVANHOANG_PROJECT2.Models.QuanTriPj2
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Xóa - Quản trị</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>QuanTriPj2</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Taikhoan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Taikhoan)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Matkhau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Matkhau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trangthai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trangthai)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    <input type="submit" value="Delete" class="btn btn-default" /> |
+    @Html.ActionLink("Quay trở lại", "Index")
+</div>
+    }
+</div>

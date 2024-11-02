@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="156d7816862f46188105f371dc6fa655" Name="Diagram1">
+        <EntityTypeShape EntityType="K22CNT3_LEVANHOANG_PROJECT2Model.ChiTietDonHangPj2" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="K22CNT3_LEVANHOANG_PROJECT2Model.DonHangPj2" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="K22CNT3_LEVANHOANG_PROJECT2Model.GioHangPj2" Width="1.5" PointX="6" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="K22CNT3_LEVANHOANG_PROJECT2Model.KhachHangPj2" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="K22CNT3_LEVANHOANG_PROJECT2Model.QuanTriPj2" Width="1.5" PointX="2.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="K22CNT3_LEVANHOANG_PROJECT2Model.SanPhamPj2" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="K22CNT3_LEVANHOANG_PROJECT2Model.FK__ChiTietDon__MaKH__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="K22CNT3_LEVANHOANG_PROJECT2Model.FK__ChiTietDon__MaSP__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="K22CNT3_LEVANHOANG_PROJECT2Model.FK__DonHangPj2__MaKH__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="K22CNT3_LEVANHOANG_PROJECT2Model.FK__GioHangPj2__MaKH__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="K22CNT3_LEVANHOANG_PROJECT2Model.FK__GioHangPj2__MaSP__3F466844" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

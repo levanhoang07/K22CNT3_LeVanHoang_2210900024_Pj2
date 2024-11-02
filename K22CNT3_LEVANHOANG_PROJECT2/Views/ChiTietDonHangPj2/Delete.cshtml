@@ -1,0 +1,70 @@
+﻿@model K22CNT3_LEVANHOANG_PROJECT2.Models.ChiTietDonHangPj2
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Xóa - Chi tiết đơn hàng</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ChiTietDonHangPj2</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaChiTiet)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MaChiTiet)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonGia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonGia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayDatHang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayDatHang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KhachHangPj2.HoTen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KhachHangPj2.HoTen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SanPhamPj2.TenSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SanPhamPj2.TenSP)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Quay trở lại", "Index")
+        </div>
+    }
+</div>
