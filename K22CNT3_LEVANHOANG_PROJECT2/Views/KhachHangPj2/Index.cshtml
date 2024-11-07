@@ -7,7 +7,7 @@
 <h2>Lê Văn Hoàng - Khách hàng</h2>
 
 <p>
-    @Html.ActionLink("Thêm mới", "Create")
+    <button type="button" class="btn" onclick="location.href='@Url.Action("Create")'">Thêm mới</button>
 </p>
 <table class="table">
     <tr>
@@ -81,6 +81,18 @@
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.TrangThai)
+        @{
+            if (item.TrangThai == 0)
+            {
+                <span class="text-warning">Đã mua sản phẩm</span>
+            }
+            else if (item.TrangThai == 1)
+            {
+                <span class="text-success">Chưa mua sanr phẩm nào</span>
+            }
+            
+        }
+
     </td>
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.MaKH }, new { @class = "btn btn-success" }) |

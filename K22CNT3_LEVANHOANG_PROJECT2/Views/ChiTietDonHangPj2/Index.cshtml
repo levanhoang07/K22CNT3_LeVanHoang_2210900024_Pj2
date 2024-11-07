@@ -7,8 +7,9 @@
 <h2>Lê Văn Hoàng - Chi tiết đơn hàng</h2>
 
 <p>
-    @Html.ActionLink("Thêm mới", "Create")
+    <button type="button" class="btn" onclick="location.href='@Url.Action("Create")'">Thêm mới</button>
 </p>
+
 <table class="table">
     <tr>
         <th>
@@ -32,32 +33,33 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.MaChiTiet)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.SoLuong)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.DonGia)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.NgayDatHang)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.KhachHangPj2.HoTen)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.SanPhamPj2.TenSP)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.MaChiTiet }, new { @class = "btn btn-success" }) |
-        @Html.ActionLink("Details", "Details", new { id = item.MaChiTiet }, new { @class = "btn btn-info" }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.MaChiTiet }, new { @class = "btn btn-danger" })
-    </td>
-</tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaChiTiet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonGia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayDatHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KhachHangPj2.HoTen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SanPhamPj2.TenSP)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaChiTiet }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MaChiTiet }, new { @class = "btn btn-info" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaChiTiet }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
 
 </table>

@@ -7,7 +7,7 @@
 <h2>Lê Văn Hoàng - Quản trị</h2>
 
 <p>
-    @Html.ActionLink("Thêm mới", "Create")
+    <button type="button" class="btn" onclick="location.href='@Url.Action("Create")'">Thêm mới</button>
 </p>
 <table class="table">
     <tr>
@@ -33,6 +33,20 @@
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.Trangthai)
+        @{
+            if (item.Trangthai == 0)
+            {
+                <span class="text-warning">Không hoạt động</span>
+            }
+            else if(item.Trangthai == 1)
+            {
+                <span class="text-success">Đang hoạt động</span> 
+            }
+            else
+            {
+                <span class="text-info">Tài khoản không tồn tại</span>
+            }
+        }
     </td>
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.Taikhoan }, new { @class = "btn btn-success" }) |
