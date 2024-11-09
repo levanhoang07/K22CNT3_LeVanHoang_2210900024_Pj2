@@ -7,7 +7,7 @@
 <h2>Lê Văn Hoàng - Đơn hàng</h2>
 
 <p>
-    <button type="button" class="btn" onclick="location.href='@Url.Action("Create")'">Thêm mới</button>
+    <button type="button" clasis="btn" onclick="location.href='@Url.Action("Create")'">Thêm mới</button>
 </p>
 <table class="table">
     <tr>
@@ -17,7 +17,7 @@
         <th>
             @Html.DisplayNameFor(model => model.NgayDatHang)
         </th>
-        <th>
+        <th>                                                                                                                                                  
             @Html.DisplayNameFor(model => model.TongTien)
         </th>
         <th>
@@ -40,7 +40,7 @@
     <td>
         @Html.DisplayFor(modelItem => item.TongTien)
     </td>
-    <td>
+    <td>                       
         @Html.DisplayFor(modelItem => item.TrangThai)
         @{
             if (item.TrangThai == 0)

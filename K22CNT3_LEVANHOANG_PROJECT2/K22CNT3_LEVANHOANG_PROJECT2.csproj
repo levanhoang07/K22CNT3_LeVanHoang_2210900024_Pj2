@@ -128,6 +128,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\AdminLVH\AdminLVHAreaRegistration.cs" />
+    <Compile Include="Areas\AdminLVH\Controllers\LVHDashboardController.cs" />
+    <Compile Include="Areas\AdminLVH\Controllers\LVH_ChiTietDonHangPj2Controller.cs" />
+    <Compile Include="Areas\AdminLVH\Controllers\LVH_DonHangPj2Controller.cs" />
     <Compile Include="Controllers\ChiTietDonHangPj2Controller.cs" />
     <Compile Include="Controllers\DonHangPj2Controller.cs" />
     <Compile Include="Controllers\GioHangPj2Controller.cs" />
@@ -171,6 +175,7 @@
     <Compile Include="Models\SanPhamPj2.cs">
       <DependentUpon>LVHModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModelViews\DH_Chitiet1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -201,6 +206,20 @@
     <Content Include="Models\LVHModel.edmx.diagram">
       <DependentUpon>LVHModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\AdminLVH\Views\web.config" />
+    <Content Include="Areas\AdminLVH\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\AdminLVH\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\AdminLVH\Views\LVH_DonHangPj2\Create.cshtml" />
+    <Content Include="Areas\AdminLVH\Views\LVH_DonHangPj2\Delete.cshtml" />
+    <Content Include="Areas\AdminLVH\Views\LVH_DonHangPj2\Details.cshtml" />
+    <Content Include="Areas\AdminLVH\Views\LVH_DonHangPj2\Edit.cshtml" />
+    <Content Include="Areas\AdminLVH\Views\LVH_DonHangPj2\Index.cshtml" />
+    <Content Include="Areas\AdminLVH\Views\LVHDashboard\Index.cshtml" />
+    <Content Include="Areas\AdminLVH\Views\LVH_ChiTietDonHangPj2\Create.cshtml" />
+    <Content Include="Areas\AdminLVH\Views\LVH_ChiTietDonHangPj2\Delete.cshtml" />
+    <Content Include="Areas\AdminLVH\Views\LVH_ChiTietDonHangPj2\Details.cshtml" />
+    <Content Include="Areas\AdminLVH\Views\LVH_ChiTietDonHangPj2\Edit.cshtml" />
+    <Content Include="Areas\AdminLVH\Views\LVH_ChiTietDonHangPj2\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -259,6 +278,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\AdminLVH\Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

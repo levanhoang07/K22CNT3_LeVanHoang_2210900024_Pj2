@@ -1,0 +1,58 @@
+﻿@model K22CNT3_LEVANHOANG_PROJECT2.Models.ChiTietDonHangPj2
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ChiTietDonHangPj2</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonGia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonGia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayDatHang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayDatHang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KhachHangPj2.HoTen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KhachHangPj2.HoTen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SanPhamPj2.TenSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SanPhamPj2.TenSP)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaChiTiet }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
